@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
+        System.out.println("Привет Мир!");
         //задача 1
         var dog = 8.0;
         System.out.println ("переменная dog = " +dog);
