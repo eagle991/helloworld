@@ -43,10 +43,10 @@ public class Main {
         }
         //задача 4
         {
-        int age = 55;
-        if (age >= 2 && age <=6){
-            System.out.println("Если возраст человека равен"+age+", то ему нужно ходить в детский сад");
-        }
+            int age = 55;
+            if (age >= 2 && age <=6){
+                System.out.println("Если возраст человека равен"+age+", то ему нужно ходить в детский сад");
+            }
             if (age >= 7 && age <=17) {
                 System.out.println("Если возраст человека равен" + age + ", то ему нужно ходить в школу");
             }
@@ -56,22 +56,22 @@ public class Main {
             if (age > 24 ) {
                 System.out.println("Если возраст человека равен" + age + ", то ему нужно ходить на работу");
             }
-    }
-            //задача 5
-            {
-                int age = 7;
-                if (age < 5) {
-                    System.out.println("Если возраст человека равен " + age + ", то ему можно кататься");
-                }
-                if(age >= 5 && age <14) {
+        }
+        //задача 5
+        {
+            int age = 7;
+            if (age < 5) {
+                System.out.println("Если возраст человека равен " + age + ", то ему можно кататься");
+            }
+            if(age >= 5 && age <14) {
                 System.out.println("Если возраст человека равен " + age + ", то ему нельзя кататься в сопровождении");
             }
-                if(age > 14) {
-                    System.out.println("Если возраст человека равен " + age + ", то ему можно кататься без сопровождения");
-                }
+            if(age > 14) {
+                System.out.println("Если возраст человека равен " + age + ", то ему можно кататься без сопровождения");
             }
+        }
 
-            //задача 6
+        //задача 6
         {
             int places = 102;
             int sitPlace = 60;
@@ -89,9 +89,9 @@ public class Main {
             }
             //задача 7
             {
-            int one = 10;
-            int two = 5;
-            int three = 30;
+                int one = 10;
+                int two = 5;
+                int three = 30;
                 if (one >= two && one >= three) {
                     System.out.println("Самое большое число - " +one);
                 } else {
