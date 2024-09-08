@@ -1,85 +1,83 @@
 public class Main {
     public static void main(String[] args) {
-//задача 1
-        {
-            int clientOS = 0;
-            if (clientOS == 0) {
-                operationSystem = "iOS";
-                System.out.println("Установите версию приложения для"+operationSystem+ "по ссылке");
-            }else if (clientOS ==1){
-                operationSystem = "Android";
-                System.out.println("Установите версию приложения для" +operationSystem+" по ссылке");
-            }else{
-                System.out.println("Неверное значение");
-            }
-        }
-//задача 2
-        {
-            int os = 0;
-            int clientDeviceYear = 2015;
-            if (os == 0) {
-                if (clientDeviceYear < 2015) {
-                    System.out.println("Установите облегченную версию приложения для ios по ссылке");
-            }else  {
-                    System.out.println("Установите версию приложения для ios по ссылке");
-                }
-            }else if (os ==1){
-                if(clientDeviceYear <2015) {
-                    System.out.println("Установите облегченную версию приложения для Android по ссылке");
-                }else {
-                    System.out.println("Установите версию приложения для Android по ссылке");
-                }
-        }
-        }
-//задача 3
-        {
-            int year =2023;
-            if (year > 1584 && (year % 4 == 0 && year % 100 != 0 || year % 400 ==0)) {
-                System.out.println(year+" высокосный год" );
-            }else {
-                System.out.println(year+" не высокосный год" );
-            }
+//Задача 1
+        int desiredSum =  2_459_000;
+        int sum = 0;
+        int amount = 15_000;
+        double percent =1d/100;
+        int mouth = 0;
+        while (sum < desiredSum ) {
+            sum += amount;
+            sum = (int) (sum * (1 + percent));
+            mouth++;
+            System.out.println("Месяц" +month+ ", сумма накопления ровна" + sun+ "рублей");
         }
 
-//задача 4
-        {
-
-            int deliveryDistance = 95;
-            if (deliveryDistance <= 20) {
-                System.out.println("Потребуется дней" + 1);
-            } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
-                System.out.println("Потребуется дней" + 2);
-            } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
-                System.out.println("Потребуется дней" + 3);
-            } else {
-                System.out.println("нет доставки");
-            }
+//Задача 2
+        int number = 0 ;
+        while ( number <10){
+            number++;
+            System.out.print(number+ " ");
         }
-//задача 5
-            {
-                int monthNumber = 12;
-                switch (monthNumber) {
-                    case 12:
-                    case 1:
-                    case 2:
-                        System.out.println("Зима");
-                        break;
-                    case 3:
-                    case 4:
-                    case 5:
-                        System.out.println("Весна");
-                        break;
-                    case 6:
-                    case 7:
-                    case 8:
-                        System.out.println("Лето");
-                        break;
-                    case 9:
-                    case 10:
-                    case 11:
-                        System.out.println("Осень");
-                        break;
-                    default:
-                        System.out.println("Не верный номер месяца");
+        System.out.print( );
+        for (; number>=1; number--){
+            System.out.print(number+ " ");
+        }
+
+//Задача 3
+        int population = 12_000_000;
+        int fertilityPerThousand = 17;
+        int mortalityPerThousand = 8;
+        int currentYear = 2024;
+        for (int year = currentYear; year < currentYear+10; year++){
+            population+=(population*fertilityPerThousand/1000)-(population*mortalityPerThousand/1000);
+            System.out.println("Год"+year+"численость населения составляет"+population);
+
+//Задача 4
+            percent =7D/100;
+            desiredSum = 12_000_000;
+            sum = amount;
+            month = 0;
+            while (sum < desiredSum) {
+                sum = (int) (sum*(1+percent));
+                month++;
+                System.out.println("Месяц" +month+ "сумма накоплений ровна"+sum+"рублей");
+            }
+
+//Задача 5
+            sum = amount;
+            month = 0;
+            while (sum < desiredSum) {
+                sum = (int) (sum*(1+percent));
+                month++;
+                if(month%6==0){
+                    System.out.println("Месяц" +month+ "сумма накоплений ровна"+sum+"рублей");
                 }
+
+//Задача 6
+                sum = amount;
+                month = 0;
+                int months = 12*9;
+                while (month < months) {
+                    sum = (int) (sum*(1+percent));
+                    month++;
+                    if(month%6==0){
+                        System.out.println("Месяц" +month+ "сумма накоплений ровна"+sum+"рублей");
+                    }
+
+//Задача 7
+                    int firstFriday = 3;
+                    for (int day = firstFriday; day <=31; day+=7){
+                        System.out.println("Сегодня пятница"+day+"-е число. Необходимо подготовить отчет");
+                    }
+
+//Задача 8
+                    int period = 79;
+                    int startSeeing = 0;
+                    int start = currentYear - 200;
+                    int end = currentYear + 100;
+                    for (int year = startSeeing; year < end; year += period) {
+                        if (year > start) {
+                            System.out.println(year);
+                        }
             }
