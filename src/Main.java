@@ -1,79 +1,56 @@
 public class Main {
     public static void main(String[] args) {
 //Задача 1
-        int desiredSum = 2_459_000;
-        int sum = 0;
-        int amount = 15_000;
-        double percent = 1d / 100;
-        int month = 0;
-        while (sum < desiredSum) {
-            sum += amount;
-            sum = (int) (sum * (1 + percent));
-            month++;
-            System.out.println("Месяц " + month + ", сумма накопления ровна " + sum + " рублей");
+        int[] ints3 = {1, 3, 4, 56,7};
+        int result = 0;
+        for(int i = 0; i < ints3.length; i++) {
+            result += ints3[i];
         }
-//Задача 2
-        int number = 0;
-        while (number < 10) {
-            number++;
-            System.out.print(number + " ");
-        }
-        for (; number >= 1; number--) {
-            System.out.print(number + " ");
-        }
-        //Задача 3
-        int population = 12_000_000;
-        int currentYear = 2024;
-        int mortalityPerThousand = 8;
-        int fertilityPerThousand = 17;
-        for (int year = currentYear; year < currentYear + 10; year++) {
-            population += population * fertilityPerThousand / 1000 - population * mortalityPerThousand / 1000;
-            System.out.println("Год" + year + ", численость населения составляет " + population);
-        }
-        //Задача 4
-        percent = 7D / 100;
-        desiredSum = 12_000_000;
-        sum = amount;
-        month = 0;
-        while (sum < desiredSum) {
-            sum = (int) (sum * (1 + percent));
-            month++;
-            System.out.println("Месяц " + month + " сумма накоплений ровна " + sum + " рублей");
-        }
-        //Задача 5
-        sum = amount;
-        month = 0;
-        while (sum < desiredSum) {
-            sum = (int) (sum * (1 + percent));
-            month++;
-            if (month % 6 == 0) {
-                System.out.println("Месяц " + month + " сумма накоплений ровна " + sum + " рублей");
-            }
-        }
-        sum = amount;
-        month = 0;
-        int months = 12 * 9;
-        while (month < months) {
-            sum = (int) (sum * (1 + percent));
-            month++;
-            if (month % 6 == 0) {
-                System.out.println("Месяц " + month + " сумма накоплений ровна " + sum + " рублей");
-            }
-        }
-        //Задача 7
-        int firstFriday = 3;
-        for (int day = firstFriday; day <= 31; day += 7) {
-            System.out.println("Сегодня пятница " + day + " -е число. Необходимо подготовить отчет ");
-        }
-//Задача 8
-        int currentYear = 2024;
-        int period = 79;
-        int startSeeing = 0;
-        int start = currentYear - 200;
-        int end = currentYear + 100;
-        for (int year = startSeeing; year < end; year += period)
-            if (year > start) {
-                System.out.println(year);
-            }
+        System.out.println("Сумма трат за месяц составила "+result+" рублей");
     }
+
+    //Задача 2
+    int[] ints4 = {1, 3, 4, 56,7};
+Arrays.sort(ints4);
+System.out.println(Arrays.toString(ints4));
+System.out.println("Максимальное "+ints4[ints4.length-1]);
+System.out.println("Минимальное "+ints4[0]);
+}else{
+        System.out.println("Максимальное и Минимальное не существует");
 }
+int max = ints4[0];
+int min = ints4[0];
+for(int i = 0; i < ints4.length; i++) {
+        if(max < ints4[i]) {
+max = ints4[i];
+        }
+        if(min > ints4[i]) {
+min = ints4[i];
+        }
+        System.out.println("Максимальное "+max);
+System.out.println("Минимальное "+min);
+}else{
+        System.out.println("Максимальное и Минимальное не существует");
+}
+
+//Задача 3
+int[] ints5 = {1, 3, 4, 56,7};
+int result = 0;
+for(int i = 0; i < ints5.length; i++) {
+result += ints5[i];
+        }
+        System.out.println("Сумма трат за месяц составила "+result+" рублей");
+double avarage = (double) result / inst5.legth;
+System.out.printf("Сумма трат за месяц составила %.2f рублей %n ",+avarage);
+}
+//Задача 4
+char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+for(int i = reverseFullName.length -1; i >= 0; i--) {
+        System.out.print("reverseFullName[i]");
+}
+        for(int i = 0; i < reverseFullName.length /2; i >= 0; i++) {
+char temp = reverseFullName[i];
+reverseFullName[i] = reverseFullName[reverseFullName.length - i - 1];
+reverseFullName[reverseFullName.length - i - 1] = temp;
+}
+        System.out.print(Arrays.toString(reverseFullName));
