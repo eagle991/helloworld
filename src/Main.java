@@ -1,18 +1,10 @@
 public class Main {
     public static void main(String[] args) {
-        //задача 1
-        String firstName = "Ivan";
-        String middleName = "Ivanovich";
-        String lastName = "Ivanov";
-        String fullName = lastName + " " + firstName + " " + middleName;
-        System.out.printf("Ф. И. О. сотрудника —%s", fullName);
-        System.out.println();
-        //Задача 2
-        String fullNametoUpperCase = fullName.toUpperCase();
-        System.out.printf("Данные Ф. И. О. сотрудника для заполнения отчета —%s\n",fullNametoUpperCase);
-        //задача 3
-        fullName = "Иванов Семён Семёнович";
-        String result = fullName.replace("ё", "е");
-        System.out.printf("Данные Ф. И. О. сотрудника  —%s\n", result);
+     Book book1 = new Book(name"qwe", year 34234, new Author("Василий","Петров"));
+     Author author = book1.getAuthor();
+        System.out.println(author);
+
+     Book book = new Book(name "Гроза", year 1999);
+        System.out.println(book.getName());
     }
 }
