@@ -1,103 +1,76 @@
-public class Main {
-    public static void main(String[] args) {
-//задача 1
-        {
-            int age = 19;
-            if (age >= 18) {
-                System.out.println("Если возраст человека равен " + age + ", то он совершеннолетний");
-            }
-        }
-        {
-            int age = 17;
-            if (age >= 18) {
-                System.out.println("Если возраст человека равен " + age + ", то он совершеннолетний");
-            } else {
-                System.out.println("Если возраст человека равен " + age + ", он не достиг совершеннолетия, нужно немного подождать");
-            }
-        }
-        //Задача 2
-        {
-            int temp = 4;
-            if (temp < 5) {
-                System.out.println("На улице холодно, нужно надеть шапку "+temp+" градуса");
-            }else {
-                System.out.println("Сегодня тепло, можно идти без шапки "+temp+" градусов");
-            }
-        }
-        //задача 3
-        {
-            int speed = 59;
-            if (speed >= 60) {
-                System.out.println("Если скорость " + speed + ", то придется заплатить штраф");
-            } else {
-                System.out.println("Если скорость " + speed + ", можно ездить спокойно");
-            }
-        }
-        {
-            int speed = 61;
-            if (speed >= 60) {
-                System.out.println("Если скорость " + speed + ", то придется заплатить штраф");
-            } else {
-                System.out.println("Если скорость " + speed + ", можно ездить спокойно");
-            }
-        }
-        //задача 4
-        {
-            int age = 55;
-            if (age >= 2 && age <=6){
-                System.out.println("Если возраст человека равен"+age+", то ему нужно ходить в детский сад");
-            } else if (age >= 7 && age <=17) {
-                System.out.println("Если возраст человека равен" + age + ", то ему нужно ходить в школу");
-            } else if (age >= 18 && age <=24) {
-                System.out.println("Если возраст человека равен" + age + ", то ему нужно ходить в университет");
-            } else if (age > 24 ) {
-                System.out.println("Если возраст человека равен" + age + ", то ему нужно ходить на работу");
-            }else {
-                System.out.println("Если возраст человека равен " + age + ", то ему нужно кудато ходить");
-            }
-        }
-        //задача 5
-        {
-            int age = 7;
-            if (age < 5) {
-                System.out.println("Если возраст человека равен " + age + ", то ему можно кататься");
-            }
-            if(age >= 5 && age <14) {
-                System.out.println("Если возраст человека равен " + age + ", то ему нельзя кататься в сопровождении");
-            } else if(age > 14) {
-                System.out.println("Если возраст человека равен " + age + ", то ему можно кататься без сопровождения");
-            }else {
-                System.out.println("Если возраст человека равен " + age + ", то ему можно что-то");
-            }
+import jdk.nio.mapmode.ExtendedMapMode;
+
+import java.util.Random;
+
+public class main {
+    private final static Random RANDOM = new Random();
+
+    private final static String[] NAMES = {"Андрей","Иван","Михаил","Сергей","Евгений","Александр"};
+    private final static String[] SURNAMES = {"Андреев","Иванов","Михаилов","Сергеев","Евгеньев","Александров"};
+    private final static String[] PUTRONYMIC_NAMES = {"Андревич","Иванович","Михаилович","Сергевич","Евгеньевич","Александрович"};
+
+    private final static Employee[] EMPLOYEES = new Employee[10];
+
+    private static void initEmployee(){
+        for (int i = 0 ; i < EMPLOYEES.length; i++){
+            String fullname = SURNAMES[RANDOM.nextInt(0, SURNAMES.length)]+" "+
+                    NAMES[RANDOM.nextInt(0, NAMES.length)]+" "+
+                    PUTRONYMIC_NAMES[RANDOM.nextInt(0, PUTRONYMIC_NAMES.length)];
+            EMPLOYEES[i] = new Employee(fullname, RANDOM.nextInt(1,6), RANDOM.nextInt(50_000,100_000));
+
         }
 
-        //задача 6
-        {
-            int places = 102;
-            int sitPlace = 60;
-            int people = 110;
-            if (place < sitPlace) {
-                {
-                    System.out.println("в вагоне есть сидячие места");
-                }
-                if (people >= sitPlace && people < places) {
-                    System.out.println("в вагоне есть стоячие места");
-                }
-                if (people >= places) {
-                    System.out.println("в вагоне нет мест");
-                }
+    }
+    public static void main(String[] args){
+        initEmployee();
+        print();
+        System.out.println("Сумма ЗП сотрудников: " + calculateSumOfSalaries());
+        System.out.println("Сотрудника с минимальной ЗП: " + findEmployeeWithMineSalary());
+        System.out.println("Сотрудника с максимальной ЗП: " + findEmployeeWithMaxSalary());
+        System.out.println("Сотрудника с средней ЗП: " + calculateAvarageOfSalaries());
+        printFullNames();
+    }
+
+    private static void print(){
+        for(Employee employee: EMPLOYEES){
+            System.out.println(employee);
+        }
+    }
+
+    private static int calculateSumOfSalaries(){
+        int sum = 0;
+        for(Employee employee: EMPLOYEES){
+            sum+=employee.getSalary();
+        }
+        return sum;
+    }
+
+    private static Employee findEmployeeWithMineSalary(){
+        Employee employeeWithMineSalary = null;
+        for(Employee employee: EMPLOYEES){
+            if(employeeWithMineSalary == null || employee.getSalary() < employeeWithMineSalary.getSalary()){
+                employeeWithMineSalary = employee;
             }
-            //задача 7
-            {
-                int one = 10;
-                int two = 5;
-                int three = 30;
-                if (one >= two && one >= three) {
-                    System.out.println("Самое большое число - " +one);
-                } else {
-                    if(two >= three) {
-                        System.out.println("Самое большое число - " +two);
-                    }else{
-                        System.out.println("Самое большое число - " +three);
-                    }
-                }
+        }
+        return employeeWithMineSalary;
+    }
+    private static Employee findEmployeeWithMaxSalary(){
+        Employee employeeWithMaxSalary = null;
+        for(Employee employee: EMPLOYEES){
+            if(employeeWithMaxSalary == null || employee.getSalary() > employeeWithMaxSalary.getSalary()){
+                employeeWithMaxSalary = employee;
+            }
+        }
+        return employeeWithMaxSalary;
+    }
+    private static double calculateAvarageOfSalaries(){
+        return (double) calculateSumOfSalaries() / EMPLOYEES.length;
+    }
+
+    private static void printFullNames(){
+        for(Employee employee : EMPLOYEES) {
+            System.out.println(employee.getFullName());
+        }
+    }
+
+}
